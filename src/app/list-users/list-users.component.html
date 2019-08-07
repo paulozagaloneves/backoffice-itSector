@@ -1,1 +1,22 @@
-<p>list-users works!</p>
+
+<h3 class="display-4">Lista de Ususarios</h3>
+<div style="float: right; padding-bottom: 20px;">
+    <button type="button" (click)="adicionar()" class="btn btn-primary btn-lg">Adicionar usuário</button>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th scope="col" class="border">Nome</th>
+        <th scope="col" class="border">User Name</th>
+        <th scope="col" class="border">Data Criação</th>
+        <th scope="col" class="button-col border"></th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td class="border">{{ user.name }} </td>
+        <td class="border">{{ user.userName }}</td>
+        <td class="border">{{ user.createTimestamp | date:'dd/MM/yyyy hh:mm' }}</td>
+        <td class="button-col border"><button type="button" (click)="editar(user.id)" class="btn btn-primary">Editar</button></td>
+    </tr>
+</table>
+
+<button type="button" (click)="logout()" class="btn btn-primary btn-lg">Logout</button>

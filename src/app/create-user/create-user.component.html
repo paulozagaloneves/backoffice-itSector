@@ -1,1 +1,23 @@
-<p>create-user works!</p>
+<h3 class="display-4">Novo usuário</h3>
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" name="name" [(ngModel)]="user.name" class="form-control" id="formGroupExampleInput" placeholder="Nome completo">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Username</label>
+        <input type="text" name="userName" [(ngModel)]="user.userName" class="form-control" id="formGroupExampleInput2" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Senha</label>
+        <input type="password" name="password" [(ngModel)]="user.password" class="form-control" id="formGroupExampleInput3" placeholder="senha">
+    </div>
+    <label for="formGroupExampleInput2">Tipo</label>
+    <select name="role" class="form-control" [(ngModel)]="user.role" required>
+        <option value=""></option>
+        <option value="ROLE_ADMIN">ADMIN</option>
+        <option value="ROLE_USER">USER</option>
+    </select>
+    <br>
+    <button type="button" (click)="adicionar()" class="btn btn-primary btn-lg">Adicionar usuário</button>
+</form>

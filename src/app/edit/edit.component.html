@@ -1,0 +1,18 @@
+<h3 class="display-4">Editar usuário</h3>
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Username</label>
+        <input type="text" name="userName" [(ngModel)]="user.userName" disabled="true" class="form-control" id="formGroupExampleInput2" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Nome</label>
+        <input type="text" name="name" [(ngModel)]="user.name" class="form-control" id="formGroupExampleInput" placeholder="Nome completo">
+    </div>
+    
+    <div class="form-group">
+        <label for="formGroupExampleInput2">Senha</label>
+        <input type="password" name="password" [(ngModel)]="user.password" class="form-control" id="formGroupExampleInput3">
+    </div>
+    <button type="button" (click)="editar()" class="btn btn-primary btn-lg">Salvar</button>        
+    <button type="button" (click)="deletar()" class="btn btn-danger btn-lg">Deletar</button>
+</form>
